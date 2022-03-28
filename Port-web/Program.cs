@@ -2,11 +2,12 @@ using Microsoft.EntityFrameworkCore;
 using Port_web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-
+string strConnString = builder.Configuration["ConnString"];
     // Add services to the container.
     builder.Services.AddRazorPages();
     builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection")
+        //builder.Configuration.GetConnectionString("ConnString")
+        strConnString
         ));
 
 var app = builder.Build();
