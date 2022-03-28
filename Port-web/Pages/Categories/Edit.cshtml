@@ -8,6 +8,7 @@
 <hr/>
     </div>
 <form method="post">
+    <input hidden asp-for="Category.Id"/>
     <div class="container bg-dark pb-2">
 
    
@@ -21,7 +22,7 @@
         <input asp-for="Category.DisplayOrder" class="form-control" />
         <span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary" style="width:150px;"><i class="bi bi-save-fill"></i>&nbsp; &nbsp; Save</button>
+    <button type="submit" class="btn btn-primary" style="width:150px;"><i class="bi bi-save-fill"></i>&nbsp; &nbsp; Update</button>
     <a  class="btn btn-warning" asp-page="/Categories/Index" style="width:150px;"> Cancel</a>
    </div>
 </form>

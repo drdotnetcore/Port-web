@@ -36,7 +36,7 @@ namespace Port_web.Pages.Categories
             }
             if (ModelState.IsValid)
             {
-                await _db.Category.AddAsync(Category);
+                _db.Category.Update(Category);
                 await _db.SaveChangesAsync();
                 return RedirectToPage("/Categories/Index");
             }

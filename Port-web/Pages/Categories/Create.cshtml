@@ -8,21 +8,21 @@
 <hr/>
     </div>
 <form method="post">
-    <div class="container bg-dark pb-2">
-
+    <div class="container bg-dark pb-5 " >
+     
    
-    <div class="mb-3">
-        <label asp-for="Category.Name"></label>
+    <div class="form-group pb-2">
+        <label asp-for="Category.Name" class="form-label"></label>
         <input asp-for="Category.Name" class="form-control" />
         <span asp-validation-for="Category.Name" class="text-danger"></span>
     </div>
-    <div class="mb-3">
+    <div class="form-group pb-4">
         <label asp-for="Category.DisplayOrder"></label>
         <input asp-for="Category.DisplayOrder" class="form-control" />
         <span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary" style="width:150px;"><i class="bi bi-save-fill"></i>&nbsp; &nbsp; Save</button>
-    <a  class="btn btn-warning" asp-page="/Categories/Index" style="width:150px;"> Cancel</a>
+    <button type="submit" class="btn btn-primary" style="width: 150px;" ><i class="bi bi-save-fill"></i>&nbsp; &nbsp; Save</button>
+    <a  class="btn btn-warning"  style="width:150px;" asp-page="/Categories/Index"> Cancel</a>
    </div>
 </form>
 

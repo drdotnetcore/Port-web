@@ -1,0 +1,35 @@
+﻿@page
+@model Port_web.Pages.Categories.DeleteModel
+ <div class="container bg-dark pb-2" style="width: 70vw">
+<div class="bg-dark  mt-4">
+        <div class="row pb-2">
+        <h4 class="text-primary pl-3">Delete Category</h4>
+        </div>
+       
+        <div asp-validation-summary=All></div>
+<hr/>
+<div class="alert alert-dismissible alert-warning w-75">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <h4 class="alert-heading">Warning!</h4>
+  <p class="mb-0"> Once you click the button this category will be deleted from the database.</p>
+</div>
+    </div>
+<form method="post">
+    <input hidden asp-for="Category.Id"/>
+
+    <div class="col-auto mb-3 w-50">
+        <label asp-for="Category.Name"></label>
+        <input asp-for="Category.Name" class="form-control" disabled/>
+       
+    </div>
+    <div class="mb-3 w-50">
+        <label asp-for="Category.DisplayOrder"></label>
+        <input asp-for="Category.DisplayOrder" class="form-control" disabled />
+    </div>
+    <button type="submit" class="btn btn-danger" style="width:150px;"><i class="bi bi-trash-fill"></i>&nbsp; &nbsp; Delete</button>
+    <a  class="btn btn-warning" asp-page="/Categories/Index" style="width:150px;"> Cancel</a>
+   
+</form>
+</div>
+
+
