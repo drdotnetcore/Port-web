@@ -6,12 +6,12 @@ using Port_web.Model;
 namespace Port_web.Pages.Categories
 {
    
-    public class CreateModel : PageModel
+    public class EditModel : PageModel
     {
         private readonly ApplicationDbContext _db;
         [BindProperty]
         public Category Category { get; set; }
-        public CreateModel(ApplicationDbContext db)
+        public EditModel(ApplicationDbContext db)
         {
             _db = db;
         }

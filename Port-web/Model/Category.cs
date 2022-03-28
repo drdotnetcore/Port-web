@@ -7,7 +7,10 @@ namespace Port_web.Model
         [Key]
         public int Id { get; set; }
         [Required]
+        [Display(Name="Name")]
         public string Name { get; set; }
+        [Display(Name = "Display Order")]
+        [Range(1,100)]
         public int DisplayOrder { get; set; }
 
     }
