@@ -6,5 +6,7 @@ prevent the disclosure of data server information.  It also makes the time requi
 developers to be significantly reduced because it will read the data source from each development computer as it is set for each 
 one.
 
-Once the application is setup the migrations and database update need to be run so that entity framework recreates the tables.
+#The connection string was finaly moved to run in an environment variable when the container is instantiated.  The connection string name is
+  ConnString  
+  
 
