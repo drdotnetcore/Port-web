@@ -19,6 +19,18 @@
                     Product Name
                 </th>
                 <th>
+                    SKU
+                </th> 
+                <th>
+                    Cat Id
+                </th> 
+                <th>
+                    Display Order
+                </th> 
+                <th>
+                    Display Order
+                </th> 
+                <th>
                     Display Order
                 </th>
             </tr>
@@ -27,8 +39,8 @@
             @foreach(var objProd in Model.Product)
             {
                 <tr>
-                    <td width="30%">@objProd.Name</td>
-                    <td width="30%">@objProd.Name</td>
+                    <td width="20%">@objProd.Name</td>
+                    <td width="20%">@objProd.Name</td>
                     <td width="10%">
                         <div class="w-75 btn-group" role="group">
                         <a asp-page="Edit" asp-route-id="@objProd.Id" class="btn btn-primary mx-2">
