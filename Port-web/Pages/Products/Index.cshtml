@@ -19,19 +19,19 @@
                     Product Name
                 </th>
                 <th>
+                    Category
+                </th> 
+                <th>
                     SKU
                 </th> 
                 <th>
-                    Cat Id
+                    Cost
                 </th> 
                 <th>
-                    Display Order
+                    Sales Price
                 </th> 
                 <th>
-                    Display Order
-                </th> 
-                <th>
-                    Display Order
+                    Discount
                 </th>
             </tr>
         </thead>
@@ -40,8 +40,13 @@
             {
                 <tr>
                     <td width="20%">@objProd.Name</td>
-                    <td width="20%">@objProd.Name</td>
-                    <td width="10%">
+                    <td width="20%">@objProd.CategoryId</td>
+                    <td width="20%">@objProd.SKU</td>
+                    <td width="10%">@objProd.Cost</td>
+                    <td width="10%">@objProd.SellingPrice</td>
+                    <td width="10%">@objProd.DiscountPercentage </td>
+
+                    <td width="20%">
                         <div class="w-75 btn-group" role="group">
                         <a asp-page="Edit" asp-route-id="@objProd.Id" class="btn btn-primary mx-2">
                             <i class="bi bi-pencil-square"></i>

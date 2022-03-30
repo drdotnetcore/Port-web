@@ -1,6 +1,7 @@
 ﻿@page
 @model Port_web.Pages.Products.CreateModel
 @{
+ 
 }
 <div class="bg-dark p-3 mt-4">
         <div class="row pb-2">
@@ -20,14 +21,30 @@
     </div>
     <div class="mb-3">
         <label asp-for="Product.CategoryId"></label>
-        <input asp-for="Product.CategoryId" class="form-control" />
+        <select name="Product.CategoryId" asp-items="Model.Options" class="form-control"></select>
         <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
-    </div>
+    </div>    
     <div class="mb-3">
         <label asp-for="Product.SKU"></label>
         <input asp-for="Product.SKU" class="form-control" />
         <span asp-validation-for="Product.SKU" class="text-danger"></span>
-    </div>
+    </div>    
+    <div class="mb-3">
+        <label asp-for="Product.Cost"></label>
+        <input asp-for="Product.Cost" class="form-control" />
+        <span asp-validation-for="Product.Cost" class="text-danger"></span>
+    </div>    
+    <div class="mb-3">
+        <label asp-for="Product.SellingPrice"></label>
+        <input asp-for="Product.SellingPrice" class="form-control" />
+        <span asp-validation-for="Product.SellingPrice" class="text-danger"></span>
+    </div>    
+    <div class="mb-3">
+        <label asp-for="Product.DiscountPercentage"></label>
+        <input asp-for="Product.DiscountPercentage" class="form-control" />
+        <span asp-validation-for="Product.DiscountPercentage" class="text-danger"></span>
+    </div>    
+
     <button type="submit" class="btn btn-primary" style="width:150px;"><i class="bi bi-save-fill"></i>&nbsp; &nbsp; Save</button>
     <a  class="btn btn-warning" asp-page="/Products/Index" style="width:150px;"> Cancel</a>
    </div>

@@ -13,7 +13,8 @@ namespace Port_web.Model
         [Display(Name="Category Id")]
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+        
+        public virtual Category ?Category { get; set; }
         [Required]
         [Display(Name = "SKU")]
         [MaxLength(50, ErrorMessage = "SKU has to be shorter than 50 characters"),MinLength(5,ErrorMessage ="SKU has to be longer than 5 characters")]

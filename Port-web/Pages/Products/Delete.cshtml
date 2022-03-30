@@ -1,13 +1,18 @@
 ﻿@page
-@model Port_web.Pages.Products.EditModel
-@{
-}
-<div class="bg-dark p-3 mt-4">
+@model Port_web.Pages.Products.DeleteModel
+<div class="container bg-dark pb-2" style="width: 70vw">
+<div class="bg-dark  mt-4">
         <div class="row pb-2">
-        <h4 class="text-primary pl-3">Edit Product</h4>
+        <h4 class="text-primary pl-3">Delete Product</h4>
         </div>
+       
         <div asp-validation-summary=All></div>
 <hr/>
+<div class="alert alert-dismissible alert-warning w-75">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <h4 class="alert-heading">Warning!</h4>
+  <p class="mb-0"> Once you click the button this category will be deleted from the database.</p>
+</div>
     </div>
 <form method="post">
     <div class="container bg-dark pb-2">
@@ -15,36 +20,36 @@
    
     <div class="mb-3">
         <label asp-for="Product.Name"></label>
-        <input asp-for="Product.Name" class="form-control" />
+        <input asp-for="Product.Name" class="form-control" disabled />
         <span asp-validation-for="Product.Name" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Product.CategoryId"></label>
-        <select name="Product.CategoryId" asp-items="Model.Options" class="form-control"></select>
+        <input asp-for="Product.CategoryId" class="form-control" disabled />
         <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
     </div>    
     <div class="mb-3">
         <label asp-for="Product.SKU"></label>
-        <input asp-for="Product.SKU" class="form-control" />
+        <input asp-for="Product.SKU" class="form-control" disabled />
         <span asp-validation-for="Product.SKU" class="text-danger"></span>
     </div>    
     <div class="mb-3">
         <label asp-for="Product.Cost"></label>
-        <input asp-for="Product.Cost" class="form-control" />
+        <input asp-for="Product.Cost" class="form-control" disabled />
         <span asp-validation-for="Product.Cost" class="text-danger"></span>
     </div>    
     <div class="mb-3">
         <label asp-for="Product.SellingPrice"></label>
-        <input asp-for="Product.SellingPrice" class="form-control" />
+        <input asp-for="Product.SellingPrice" class="form-control" disabled />
         <span asp-validation-for="Product.SellingPrice" class="text-danger"></span>
     </div>    
     <div class="mb-3">
         <label asp-for="Product.DiscountPercentage"></label>
-        <input asp-for="Product.DiscountPercentage" class="form-control" />
+        <input asp-for="Product.DiscountPercentage" class="form-control" disabled />
         <span asp-validation-for="Product.DiscountPercentage" class="text-danger"></span>
     </div>    
 
-    <button type="submit" class="btn btn-primary" style="width:150px;"><i class="bi bi-save-fill"></i>&nbsp; &nbsp; Update</button>
+    <button type="submit" class="btn btn-danger" style="width:150px;"><i class="bi bi-trash-fill"></i>&nbsp; &nbsp; Delete</button>
     <a  class="btn btn-warning" asp-page="/Products/Index" style="width:150px;"> Cancel</a>
    </div>
 </form>
