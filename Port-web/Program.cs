@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
+
 using Microsoft.EntityFrameworkCore;
 using Port_web.Data;
 using Microsoft.AspNetCore.Identity;
@@ -21,11 +21,12 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
          //builder.Configuration.GetConnectionString("ConnString")
          strConnString
-        )); ;
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();builder.Services.AddDbContext<ApplicationDbContext>(options =>
-   // options.UseSqlServer(connectionString));
-   options.UseSqlServer(strConnString));
+        )); 
+
+builder.Services.AddDefaultIdentity<IdentityUser>()
+        .AddEntityFrameworkStores<ApplicationDbContext>();
+        
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -43,7 +44,11 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapRazorPages();
-
+app.MapControllerRoute
+    (
+    name: "default",
+    pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}"
+    );
+   
 app.Run();
