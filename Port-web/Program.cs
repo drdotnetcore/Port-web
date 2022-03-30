@@ -2,13 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Port_web.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 string strConnString = builder.Configuration["ConnString"];
-// Add services to the container.
-//Authentication: Cookie options.
-
 
 
 builder.Services.AddRazorPages();
@@ -18,14 +17,24 @@ builder.Services.AddRazorPages();
 //then get it from the builder.Configuration settings above instead.
 ------------------------------------JCMARIN--------------------------------------------------*/
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
-         //builder.Configuration.GetConnectionString("ConnString")
-         strConnString
-        )); 
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(strConnString)); 
 
-builder.Services.AddDefaultIdentity<IdentityUser>()
-        .AddEntityFrameworkStores<ApplicationDbContext>();
-        
+
+//builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDbContext>();
+//New add------------------------------------------
+
+
+builder.Services.AddControllers(config =>
+{
+    var policy = new AuthorizationPolicyBuilder()
+                     .RequireAuthenticatedUser()
+                     .Build();
+    config.Filters.Add(new AuthorizeFilter(policy));
+});
+
+
+//New add------------------------------------------------
 
 var app = builder.Build();
 
@@ -37,7 +46,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
