@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Port_web.Pages
 {
-
+    
     public class PrivacyModel : PageModel
     {
         private readonly ILogger<PrivacyModel> _logger;

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Port_web.Data;
@@ -5,7 +6,7 @@ using Port_web.Model;
 
 namespace Port_web.Pages.Categories
 {
-   
+   [Authorize]
     public class CreateModel : PageModel
     {
         private readonly ApplicationDbContext _db;

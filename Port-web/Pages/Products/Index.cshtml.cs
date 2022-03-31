@@ -6,6 +6,7 @@ using Port_web.Model;
 
 namespace Port_web.Pages.Products
 {
+
    
     public class IndexModel : PageModel
     {

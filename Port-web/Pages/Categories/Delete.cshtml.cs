@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +7,7 @@ using Port_web.Model;
 
 namespace Port_web.Pages.Categories
 {
+    [Authorize]
     public class DeleteModel : PageModel
     {
         private readonly ApplicationDbContext _db;

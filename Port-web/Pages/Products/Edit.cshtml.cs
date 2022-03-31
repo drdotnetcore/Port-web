@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -6,6 +7,7 @@ using Port_web.Model;
 
 namespace Port_web.Pages.Products
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         public readonly ApplicationDbContext _db;
