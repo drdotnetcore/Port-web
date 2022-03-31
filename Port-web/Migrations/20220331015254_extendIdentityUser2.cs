@@ -4,7 +4,7 @@
 
 namespace Port_web.Migrations
 {
-    public partial class extendIdentityUser : Migration
+    public partial class extendIdentityUser2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -22,7 +22,13 @@ namespace Port_web.Migrations
                 defaultValue: "");
 
             migrationBuilder.AddColumn<string>(
-                name: "Name",
+                name: "FirstName",
+                table: "AspNetUsers",
+                type: "nvarchar(max)",
+                nullable: true);
+
+            migrationBuilder.AddColumn<string>(
+                name: "LastName",
                 table: "AspNetUsers",
                 type: "nvarchar(max)",
                 nullable: true);
@@ -57,7 +63,11 @@ namespace Port_web.Migrations
                 table: "AspNetUsers");
 
             migrationBuilder.DropColumn(
-                name: "Name",
+                name: "FirstName",
+                table: "AspNetUsers");
+
+            migrationBuilder.DropColumn(
+                name: "LastName",
                 table: "AspNetUsers");
 
             migrationBuilder.DropColumn(

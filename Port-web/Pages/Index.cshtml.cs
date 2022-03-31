@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Port_web.Pages
 {
- [AllowAnonymous]
+
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;

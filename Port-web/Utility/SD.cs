@@ -2,9 +2,9 @@
 {
     public static class SD
     {
-        public const string Role_User_Indi = "Individual";
-        public const string Role_User_Comp = "Company";
-        public const string Role_Admin = "Admin";
-        public const string Role_Employee = "Employee";
+        public const string ManagerRole = "Manager";
+        public const string FrontDeskRole = "Front";
+        public const string KitchenRole = "Kitchen";
+        public const string CustomerRole = "Customer";
     }
 }
